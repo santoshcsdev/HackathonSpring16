@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>REVIEW POINT</title>
+
+    <link href="ROO_CODERS/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLE CSS -->
+     <link href="ROO_CODERS/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="ROO_CODERS/css/style.css" rel="stylesheet" />
+    <script data-require="angular.js@1.4.0" data-semver="1.4.0" src="https://code.angularjs.org/1.4.0/angular.js"></script>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <script src="ROO_CODERS/js/app.js"></script>
+</head>
+<body ng-app="app" ng-controller="Ctrl" >
+   
+        <div class="navbar navbar-inverse navbar-fixed-top " >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" ><strong style=""></strong> REVIEW P<i class="fa fa-globe"></i>INT</a>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right set-links">
+                    <li><a href="index.html" class="active-menu-item">HOME</a></li>
+                     <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="blank.html">CONTACT US</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!--MENU SECTION END-->
+    <section id="home-sec">
+        <div class="overlay text-center">
+            <h1 >Review Point</h1>
+            <hr class="hr-set"/>
+
+            <p>Provides best analysis for product reviews </p>
+        </div>
+    </section>
+    <!--HOME SECTION END-->
+    <section id="search-domain" >
+        <div class="container">
+            <div class="row">
+<div class="col-md-8">
+        <input type="text" id="productname" ng-model="productname" placeholder="Enter product name" class="form-control input-cls"    />
+
+</div>
+                <div class="col-md-4">
+                    <input type="button" ng-click="getReview(productname)" class="btn btn-info btn-lg btn-set"  value="GET REVIEW" />
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--SEARCH SECTION END-->
+        <div style="position:absolute; left: 235px">
+        <table cellspacing="2" ng-repeat= "rating in OverallRating">
+
+            <tr>
+                <td style="color: blue">
+                    Name:
+                </td>
+                <td>
+                    <b>{{ rating.Name }}</b>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue">
+                    Price$:
+                </td>
+                <td>
+                    <b>{{ rating.Price }}</b>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue">
+                    Review Point Rating:
+                </td>
+                <td>
+                    <b>{{ rating.Rating }}</b>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue">
+                    Review Point Suggestion:
+                </td>
+                <td>
+                    <b>{{ rating.Decision }}</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                </td>
+                <td style="align-content: center">
+                    <img src="{{ rating.Image }}">
+                    <br><br><br><br>
+                </td>
+            </tr>
+
+        </table>
+        </div>
+    <script src="ROO_CODERS/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="ROO_CODERS/js/bootstrap.js"></script>
+    <!-- CUSTOM SCRIPTS  -->
+    <script src="ROO_CODERS/js/custom.js"></script>
+</body>
+</html>
